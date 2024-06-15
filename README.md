@@ -2,4 +2,5 @@ Using Fangraphs plus stats to try and predict WS winner with a Random Forest Mod
 
 I ran 5 random forest models. There's no reason for 5 I just picked it, each forest has a depth of 5 and 500 trees. I picked those by more art then science. I tried a bunch of things and these looked good enough. My only critera was a log loss of .15 or under or I ran it again to save it as one of the 5 runs. I couldn't get the CSV files formatted that well on here but you can get all the results on this Github. 5Runs.csv is the results of the 5 individual trees. WSJune15.csv is the average of those 5 and the correspoing odds of the average probablites. ParameterImportance.csv is the how the tree weighted each stat in its in decison process.
 
+You could probably improve on the results by changing the trees, depth, stats or whatever.
 
