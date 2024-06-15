@@ -6,6 +6,7 @@ Next I averaged those 5 runs into one prediction with the probablity and corresp
 [WSJune15.csv](https://github.com/user-attachments/files/15845711/WSJune15.csv)# 
 
 Team,Prob,Odds
+
 NYY,20.02207900125336,4.994486336495831
 LAD,9.384174203603342,10.65623866632846
 TOR,7.746176243663237,12.909595244725427
@@ -40,6 +41,7 @@ Last I have one did save some of the feature importance data for one run. This j
 [ParameterImportance.csv](https://github.com/user-attachments/files/15845712/ParameterImportance.csv)
 
 ParaStat,Importance
+
 AVG+_1,0.07379075493068260
 PLD%+,0.06618796859653840
 K%+,0.0635340319203682
