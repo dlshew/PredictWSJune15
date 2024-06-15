@@ -4,6 +4,7 @@ The first thing I have is I ran 5 random forest models. There's no reason for 5 
 
 Next I averaged those 5 runs into one prediction with the probablity and corresponding decimal odds.
 [WSJune15.csv](https://github.com/user-attachments/files/15845711/WSJune15.csv)# 
+
 Team,Prob,Odds
 NYY,20.02207900125336,4.994486336495831
 LAD,9.384174203603342,10.65623866632846
@@ -37,6 +38,7 @@ COL,0.00010468515566665524,955245.2720080583
 ng WSJune15.csv…]()
 Last I have one did save some of the feature importance data for one run. This just shows how much weight the model put into each stat. You can see the stats I picked in there or in the files. I removed some of the + stats just becasue I thought they were redundant or not important.
 [ParameterImportance.csv](https://github.com/user-attachments/files/15845712/ParameterImportance.csv)
+
 ParaStat,Importance
 AVG+_1,0.07379075493068260
 PLD%+,0.06618796859653840
