@@ -1,12 +1,9 @@
 Using Fangraphs plus stats to try and predict WS winner with a Random Forest Model. The data used for the model, its code, and outputs are all in the files. All the data used is from Fangraphs, I used 2010 through 2023 seasons (skipping 2020) to train. The data was from opening day to June 15th for every season. I predicting using data for all games completed through June 14th in the 2024 seasons. Since the games played aren't even for every team in the dataset I used "+ stats" from since they're already normalized. Overall I don't really like the predictions. A team being at 20 percent on June 15th doesn't make much sense to me. For me that makes it a better guide than any type of true probablity. There's some pretty obvious weaknesses; the stats I limited myself too and the model only takes into account who you have been up to this point. It knows nothing about injuries, strength of schedule, or possible playoff path. All it knows is what historic champions looked like on June 15th and how you compare to them right now. All of the files I put in here will be cleaner in the files section or by opening them.
 The first thing I have is I ran 5 random forest models. There's no reason for 5 I just picked it, each has a depth of 5 and 500 trees. I picked those by more art then science, a bunch of attempts and these looked good enough. My only critera was a log loss of .15 or under.
-[5Runs.csv](https://github.com/user-attachments/files/15845705/5Runs.csv) 
 
-Next I averaged those 5 runs into one prediction with the probablity and corresponding decimal odds.
-[WSJune15.csv](https://github.com/user-attachments/files/15845711/WSJune15.csv)# 
+
 
 Team,Prob,Odds
-
 NYY,20.02207900125336,4.994486336495831
 LAD,9.384174203603342,10.65623866632846
 TOR,7.746176243663237,12.909595244725427
@@ -36,30 +33,5 @@ CHW,0.00010468515566665524,955245.2720080583
 OAK,0.00010468515566665524,955245.2720080583
 LAA,0.00010468515566665524,955245.2720080583
 COL,0.00010468515566665524,955245.2720080583
-ng WSJune15.csv…]()
-Last I have one did save some of the feature importance data for one run. This just shows how much weight the model put into each stat. You can see the stats I picked in there or in the files. I removed some of the + stats just becasue I thought they were redundant or not important.
-[ParameterImportance.csv](https://github.com/user-attachments/files/15845712/ParameterImportance.csv)
 
-ParaStat,Importance
-
-AVG+_1,0.07379075493068260
-PLD%+,0.06618796859653840
-K%+,0.0635340319203682
-WHIP+,0.06208837137089660
-ISO+,0.05607673558140640
-K/9+,0.052875848800782300
-AVG+,0.05162258350656710
-OBP+,0.051123827859553900
-BABIP+,0.050454226818497300
-HR/9+,0.05030566671768090
-BABIP+_1,0.04736294846185270
-LD+%,0.04735948375229210
-xFIP-,0.04726950099211450
-ERA-,0.04561770166569170
-SLG+,0.04336702191438340
-LOB%+,0.043115478519796200
-wRC+,0.03860791953395560
-BB%+,0.037714422974739100
-WAR,0.037181117308981500
-K/BB+,0.034344388773219400meterImportance.csv…]()
 
