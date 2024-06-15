@@ -12,20 +12,20 @@ yTrain, XTrain = unpack(Train, ==(:WonWS))
 yTest, XTest = unpack(Test, ==(:WonWS))
 yTrain = coerce(yTrain, Multiclass)
 
-mach = machine(model, XTrain[:, 2:25], yTrain) |> fit!
-yhat = predict(mach, XTest[:, 2:25])
+mach = machine(model, XTrain[:, 2:21], yTrain) |> fit!
+yhat = predict(mach, XTest[:, 2:21])
 display([yTest yhat])
 println(log_loss(yhat, yTest)) 
 
-Prediction = predict(mach, TwoFour[:, 2:25])
+Prediction = predict(mach, TwoFour[:, 2:21])
 TwoFour.WS .= broadcast(pdf, Prediction, 1)
 TwoFour.WS .= (TwoFour.WS ./ sum(TwoFour.WS)) .* 100
 
 select!(TwoFour,  :Team, :WS)
 sort!(TwoFour, :WS, rev=true)
 
-CSV.write("WSProj5.csv", TwoFour)
+CSV.write("WSProj1.csv", TwoFour)
 println(fitted_params(mach).forest)
 FImportant = DataFrame(feature_importances(mach))
 show(FImportant)
-#CSV.write("ParameterImportance.csv", FImportant)
+CSV.write("ParameterImportance.csv", FImportant)
